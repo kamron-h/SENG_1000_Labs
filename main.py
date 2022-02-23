@@ -516,7 +516,6 @@ def driving_cost(miles_per_gallon, dollars_per_gallon, miles_driven):
 
 
 def total_driving_cost(current_mpg, current_gas_price):
-
     ls.append(driving_cost(current_mpg, current_gas_price, 10))
     ls.append(driving_cost(current_mpg, current_gas_price, 50))
     ls.append(driving_cost(current_mpg, current_gas_price, 400))
@@ -528,3 +527,37 @@ def total_driving_cost(current_mpg, current_gas_price):
 # gas_price = float(input())
 #
 # total_driving_cost(mpg, gas_price)
+
+
+# 6.20 LAB: Step counter
+"""A pedometer treats walking 1 step as walking 2.5 feet. 
+Define a function named feet_to_steps that takes a float as a 
+parameter, representing the number of feet walked, and returns 
+an integer that represents the number of steps walked. 
+Then, write a main program that reads the number of feet walked 
+as an input, calls function feet_to_steps() 
+with the input as an argument, and outputs the number of steps.
+
+Use floating-point arithmetic to perform the conversion.
+
+Input: 
+    150.5
+    
+Output:
+    60
+"""
+
+def feet_to_steps(nof):
+    one_step = 2.5
+    total_steps = nof / 2.5
+    print(f'{total_steps:.0f}')
+
+
+number_feet_walked = float(input())
+# 6.21 LAB: Convert to binary - functions
+# feet_to_steps(number_feet_walked)
+
+
+# 6.21 LAB: Convert to binary - functions
+
+# 7.2.1: Field width.
