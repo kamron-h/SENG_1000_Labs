@@ -381,6 +381,46 @@ import binascii
 # print()
 
 
+# 5.19.1: LAB: Adjust values in a list by normalizing
+"""
+When analyzing data sets, such as data for human heights or for human weights, 
+a common step is to adjust the data. This adjustment can be done by 
+normalizing to values between 0 and 1, or throwing away outliers.
+For this program, adjust the values by dividing all values by the largest value. 
+The input begins with an integer indicating the number of floating-point values that follow.
+Output each floating-point value with two digits after the decimal point
+
+    Input :
+    
+        5
+        30.0
+        50.0
+        10.0
+        100.0
+        65.0
+        
+    Output :
+    
+        0.30
+        0.50
+        0.10
+        1.00
+        0.65
+"""
+
+# num_input = int(input())
+# num_list = []
+# max_result = 0
+#
+# for i in range(1, num_input + 1):
+#     floater = float(input())
+#     num_list.append(floater)
+#     max_result = max.__call__(num_list)
+#
+# for m in num_list:
+#     z = (m / max_result)
+#     print(f'{z:.2f}')
+
 # # 6.2.2: Function call with parameter: Printing formatted measurement.
 # def print_feet_inch_short(num_feet, num_inches):
 #     print(f'{num_feet}\' {num_inches}\"')
@@ -392,26 +432,47 @@ import binascii
 # print_feet_inch_short(user_feet, user_inches)
 
 
+# 6.4.1: Functions: Factoring out a unit-conversion calculation.
+"""
+Write a function so that the main program below can be replaced by the 
+simpler code that calls function mph_and_minutes_to_miles(). 
+Original main program: 
+"""
+
+
+# miles_per_hour = float(input())
+# minutes_traveled = float(input())
+
+
+def mph_and_minutes_to_miles(mph, min_traveled):
+    hours_traveled = min_traveled / 60.0
+    miles_traveled = hours_traveled * mph
+
+    return miles_traveled
+
+
+# mph_and_minutes_to_miles(miles_per_hour, minutes_traveled)
+
 # # 6.6.1: Function stubs: Statistics.
-# def get_user_num():
-#     n = int(input())
-#     print('FIXME: Finish get_user_num()')
-#     return n
-#
-#
-# def compute_avg(x, y):
-#     print('FIXME: Finish compute_avg()')
-#     return (x + y) / 2
-#
-#
-# user_num1 = 0
-# user_num2 = 0
-# avg_result = 0
-#
+def get_user_num():
+    n = int(input())
+    print('FIXME: Finish get_user_num()')
+    return n
+
+
+def compute_avg(x, y):
+    print('FIXME: Finish compute_avg()')
+    return (x + y) / 2
+
+
+user_num1 = 0
+user_num2 = 0
+avg_result = 0
+
 # user_num1 = get_user_num()
 # user_num2 = get_user_num()
 # avg_result = compute_avg(user_num1, user_num2)
-#
+
 # print('Avg:', avg_result)
 
 
@@ -547,17 +608,124 @@ Output:
     60
 """
 
+
 def feet_to_steps(nof):
     one_step = 2.5
-    total_steps = nof / 2.5
-    print(f'{total_steps:.0f}')
+    return round(nof / 2.5)
 
 
-number_feet_walked = float(input())
+# number_feet_walked = float(input())
+# total_steps = feet_to_steps(number_feet_walked)
+# print(f'{total_steps:.0f}')
+
+
 # 6.21 LAB: Convert to binary - functions
-# feet_to_steps(number_feet_walked)
+def int_to_reverse_binary(number: int):
+    """
+        Write a program that takes in a positive integer
+        as input, and outputs a string of 1's and 0's representing
+        the integer in binary.
+
+        The program must define and call the following two functions.
+        Define a function named int_to_reverse_binary() that takes an integer
+        as a parameter and returns a string of 1's and 0's representing the
+        integer in binary (in reverse). Define a function named string_reverse()
+        that takes an input string as a parameter and returns a string
+        representing the input string in reverse.
+
+        Input:
+            6
+
+        Output:
+            110
+
+        def int_to_reverse_binary(integer_value)
+        def string_reverse(input_string)
+        """
+    binary = format(number, 'b')
+    bin_number = ''
+    # print(digit)
+    for i in reversed(str(binary)):
+        bin_number += i
+    bin_value = bin_number
+    return bin_value
 
 
-# 6.21 LAB: Convert to binary - functions
+def string_reverse(digit: str):
+    #     takes an input string as a parameter and returns a string
+    #     in reverse
+    rev_digit = ''
+    # print(digit)
+    for i in reversed(digit):
+        rev_digit += i
+    str_value = str(rev_digit)
+    return str_value
+
+
+# user_input = int(6)
+# print(string_reverse(int_to_reverse_binary(user_input)))
+
+
+# 6.22 LAB: Swapping variables
+def swap_values(a: int, b: int, c: int, d: int):
+    a_0 = b
+    b_0 = a
+    c_0 = 9
+    d_0 = c
+
+    print(a_0, end=' ')
+    print(b_0, end=' ')
+    print(c_0, end=' ')
+    print(d_0)
+
+
+def read_integers(e: int, f: int, g: int, h: int):
+    swap_values(e, f, g, h)
+
+
+# first = int(input())
+# second = int(input())
+# third = int(input())
+# fourth = int(input())
+#
+# read_integers(4, 3, 6, 5)
+
 
 # 7.2.1: Field width.
+N = int(input())
+
+
+def f(digit):
+    if digit > 0:
+        ls.append(1)
+    elif digit > 1:
+        ls.insert(1, 3)
+    elif digit > 2:
+        ls.remove(1)
+    elif digit > 3:
+        ls.pop()
+    elif digit > 4:
+        ls.reverse()
+    elif digit > 5:
+        print(ls.sort)
+    elif digit > 6:
+        ls.sort()
+
+
+# f(N)
+
+
+# 7.2.2: Format temperature output.
+"""
+Print air_temperature with 1 decimal point followed by C.
+
+Input:
+    36.4158102 
+Output:
+    36.4c
+    
+"""
+
+air_temperature = float(input())
+# print(f'{air_temperature:.1f}', end='C')
+# print()
