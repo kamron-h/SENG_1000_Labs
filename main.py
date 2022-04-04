@@ -917,31 +917,30 @@ whether the input is a palindrome.
         bob is a palindrome
 
 """
-# Get user input
-user_input = input().strip()
-# Create variable to hold reversed name
-name_backwards = ''
-# Split name
-name_b = user_input.split()
-# Join name WITHOUT spaces
-compare_name = ''.join(name_b)
-
-# Print name No-Spaces
-print(compare_name)   # <--- NOT NEEDED, COMMENT OUT BEFORE SUBMITTING
-
-# Append name in reverse to name_backwards
-for i in reversed(compare_name):
-    name_backwards += i
-
-# Print name reversed No-Spaces
-print(name_backwards)   # <--- NOT NEEDED, COMMENT OUT BEFORE SUBMITTING
-
-# Compare name w/ name.reversed
-if compare_name == name_backwards:
-    print(f'{user_input} is a palindrome')
-else:
-    print(f'{user_input} is not a palindrome')
-
+# # Get user input
+# user_input = input().strip()
+# # Create variable to hold reversed name
+# name_backwards = ''
+# # Split name
+# name_b = user_input.split()
+# # Join name WITHOUT spaces
+# compare_name = ''.join(name_b)
+#
+# # Print name No-Spaces
+# print(compare_name)  # <--- NOT NEEDED, COMMENT OUT BEFORE SUBMITTING
+#
+# # Append name in reverse to name_backwards
+# for i in reversed(compare_name):
+#     name_backwards += i
+#
+# # Print name reversed No-Spaces
+# print(name_backwards)  # <--- NOT NEEDED, COMMENT OUT BEFORE SUBMITTING
+#
+# # Compare name w/ name.reversed
+# if compare_name == name_backwards:
+#     print(f'{user_input} is a palindrome')
+# else:
+#     print(f'{user_input} is not a palindrome')
 
 # 7.10 LAB: Remove all non-alpha characters
 """
@@ -1388,6 +1387,28 @@ Full credit is 100, so anything over 100 is extra credit.
 # print(joined_temp)
 
 
+# 8.16 LAB: Varied amount of input data
+"""
+Statistics are often calculated with varying amounts of input data. 
+Write a program that takes any number of integers as input, and outputs the average and max. 
+
+    Input :
+
+       15 20 0 5
+       
+    Output :
+
+       10 20
+"""
+
+# user_input = input().strip()
+# ls_numbers = user_input.split()
+# average = sum([int(i) for i in ls_numbers]) / len(ls_numbers)
+# max = max([int(ii) for ii in ls_numbers])
+#
+# print(f'{average:.0f} {max:.0f}')
+
+
 # 8.17 LAB: Filter and sort a list (Completed)
 
 """
@@ -1579,3 +1600,35 @@ Hint: Use nested loops.
 #         count += 1
 #         print(cell, end=' | ' if count < len(mult_table) else '')
 #     print()
+
+
+# 8.14.1: Report country population.
+"""
+ Write a loop that prints each country's population in country_pop. 
+
+    Input :
+
+        China:1365830000,India:1247220000,United States:318463000,Indonesia:252164800
+
+    Output :
+
+        United States has 318463000 people.
+        India has 1247220000 people.
+        Indonesia has 252164800 people.
+        China has 1365830000 people.
+
+"""
+
+# user_input = input()
+# entries = user_input.split(',')
+# country_pop = {}
+#
+# for pair in entries:
+#     split_pair = pair.split(':')
+#     country_pop[split_pair[0]] = split_pair[1]
+#     # country_pop is a dictionary, Ex: { 'Germany':'82790000', 'France':'67190000' }
+#     for country, pop in country_pop.items():
+#     # country = split_pair[0]
+#     # pop = split_pair[1]
+#
+#     print(country, 'has', pop, 'people.')
