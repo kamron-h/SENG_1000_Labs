@@ -1602,7 +1602,7 @@ Hint: Use nested loops.
 #     print()
 
 
-# 8.14.1: Report country population.
+# 8.14.1: Report country population. (Completed)
 """
  Write a loop that prints each country's population in country_pop. 
 
@@ -1632,3 +1632,751 @@ Hint: Use nested loops.
 #     # pop = split_pair[1]
 #
 #     print(country, 'has', pop, 'people.')
+
+
+# 9.11.1: LAB: Car value (classes) (Completed)
+"""
+Complete the Car class by creating an attribute purchase_price (type int) 
+and the method print_info() that outputs the car's information.
+
+    Input :
+
+        2011
+        18000
+        2018
+
+    Output :
+
+        Car's information:
+           Model year: 2011
+           Purchase price: 18000
+           Current value: 5770
+"""
+# class Car:
+#     def __init__(self):
+#         self.model_year = 0
+#         # TODO: Declare purchase_price attribute
+#
+#         self.current_value = 0
+#
+#     def calc_current_value(self, current_year):
+#         depreciation_rate = 0.15
+#         # Car depreciation formula
+#         car_age = current_year - self.model_year
+#         self.current_value = round(self.purchase_price * (1 - depreciation_rate) ** car_age)
+#
+#     # TODO: Define print_info() method to output model_year, purchase_price, and current_value
+#      def print_info(self):
+#            print(f"Car's information:\n   Model year: {self.model_year}")
+#            print(f"   Purchase price: {self.purchase_price}\n   Current value: {self.current_value}")
+#
+#
+# if __name__ == "__main__":
+#     year = int(input())
+#     price = int(input())
+#     current_year = int(input())
+#
+#     my_car = Car()
+#     my_car.model_year = year
+#     my_car.purchase_price = price
+#     my_car.calc_current_value(current_year)
+#     my_car.print_info()
+
+
+# 9.12.1: LAB: Nutritional information (classes/constructors) (Completed)
+"""
+Complete the FoodItem class by adding a constructor to initialize a food item. 
+The constructor should initialize the name (a string) to "None" and all other instance attributes to 0.0 by default. 
+If the constructor is called with a food name, grams of fat, grams of carbohydrates, 
+and grams of protein, the constructor should assign each instance attribute with the appropriate parameter value.
+
+The given program accepts as input a food item name, fat, carbs, and protein and the number of servings. 
+The program creates a food item using the constructor parameters' default values and a food item using the input values. 
+The program outputs the nutritional information and calories per serving for both food items.
+
+    Input :
+
+        M&M's
+        10.0
+        34.0
+        2.0
+        1.0
+
+    Output :
+
+        Nutritional information per serving of None:
+           Fat: 0.00 g
+           Carbohydrates: 0.00 g
+           Protein: 0.00 g
+        Number of calories for 1.00 serving(s): 0.00
+        
+        Nutritional information per serving of M&M's:
+           Fat: 10.00 g
+           Carbohydrates: 34.00 g
+           Protein: 2.00 g
+        Number of calories for 1.00 serving(s): 234.00
+"""
+
+# class FoodItem:
+#     # TODO: Define constructor with parameters to initialize instance
+#     #       attributes (name, fat, carbs, protein)
+#     def __init__(self, name='None', fat=0, carbs=0, protein=0):
+#         self.name = name
+#         self.fat = fat
+#         self.carbs = carbs
+#         self.protein = protein
+#
+#     def get_calories(self, num_servings):
+#         # Calorie formula
+#         calories = ((self.fat * 9) + (self.carbs * 4) + (self.protein * 4)) * num_servings
+#         return calories
+#
+#     def print_info(self):
+#         print(f'Nutritional information per serving of {self.name}:')
+#         print(f'   Fat: {self.fat:.2f} g')
+#         print(f'   Carbohydrates: {self.carbs:.2f} g')
+#         print(f'   Protein: {self.protein:.2f} g')
+#
+#
+# if __name__ == "__main__":
+#     food_item1 = FoodItem()
+#
+#     item_name = input()
+#     amount_fat = float(input())
+#     amount_carbs = float(input())
+#     amount_protein = float(input())
+#
+#     food_item2 = FoodItem(item_name, amount_fat, amount_carbs, amount_protein)
+#
+#     num_servings = float(input())
+#
+#     food_item1.print_info()
+#     print(f'Number of calories for {num_servings:.2f} serving(s): {food_item1.get_calories(num_servings):.2f}')
+#
+#     print()
+#
+#     food_item2.print_info()
+#     print(f'Number of calories for {num_servings:.2f} serving(s): {food_item2.get_calories(num_servings):.2f}')
+
+
+# 9.13 LAB: Artwork label (classes/constructors) (Completed)
+"""
+Define the Artist class with a constructor to initialize an artist's information and a print_info() method.
+The constructor should by default initialize the artist's name to "None" and the years of birth and death to 0.
+print_info() should display Artist Name, born XXXX if the year of death is -1 or Artist Name (XXXX-YYYY) otherwise.
+
+Define the Artwork class with a constructor to initialize an artwork's information and a print_info() method.
+The constructor should by default initialize the title to "None", the year created to 0,
+and the artist to use the Artist default constructor parameter values.
+
+    Input :
+
+        Pablo Picasso
+        1881
+        1973
+        Three Musicians
+        1921
+
+    Output :
+        Artist: Pablo Picasso (1881-1973)
+        Title: Three Musicians, 1921
+        
+        
+    Input :
+
+        Brice Marden
+        1938
+        -1
+        Distant Muses 
+        2000
+
+    Output :
+        Artist: Brice Marden, born 1938
+        Title: Distant Muses, 2000
+"""
+# class Artist:
+#
+#     # TODO: Define constructor with parameters to initialize instance attributes
+#     #       (name, birth_year, death_year)
+#     def __init__(self, name='None', birth_year=0, death_year=0):
+#         self.name = name
+#         self.birth_year = birth_year
+#         self.death_year = death_year
+#
+#     # TODO: Define print_info() method. If death_year is -1, only print birth_year
+#     def print_info(self):
+#         if self.death_year == -1:
+#             print(f'Artist: {self.name}, born {self.birth_year}')
+#         else:
+#             print(f'Artist: {self.name} ({self.birth_year}-{self.death_year})')
+#
+#
+# class Artwork:
+#
+
+#
+#
+# if __name__ == "__main__":
+#     user_artist_name = input()
+#     user_birth_year = int(input())  # TODO: Define constructor with parameters to initialize instance attributes
+#     #       (title, year_created, artist)
+#     def __init__(self, title='None', year_created=0, artist=Artist()):
+#         self.title = title
+#         self.year_created = year_created
+#         self.artist = artist
+
+    # TODO: Define print_info() method
+    def print_info(self):
+        self.artist.print_info()
+        print(f'Title: {self.title}, {self.year_created}')
+    user_death_year = int(input())
+    user_title = input()
+    user_year_created = int(input())
+#
+#     user_artist = Artist(user_artist_name, user_birth_year, user_death_year)
+#
+#     new_artwork = Artwork(user_title, user_year_created, user_artist)
+#
+#     new_artwork.print_info()
+
+
+# 9.14 LAB: Triangle area comparison (classes) (Completed)
+"""
+Given class Triangle, complete the program to read and set the base and height
+of triangle1 and triangle2, determine which triangle's area is larger, and 
+output the larger triangle's info, making use of Triangle's relevant methods.
+
+    Input :
+
+        3.0
+        4.0
+        4.0
+        5.0
+
+Where 3.0 is triangle1's base, 4.0 is triangle1's height,
+4.0 is triangle2's base, and 5.0 is triangle2's height, 
+the OUTPUT :
+    
+        Triangle with larger area:
+        Base: 4.00
+        Height: 5.00
+        Area: 10.00
+"""
+# class Triangle:
+#     def __init__(self):
+#         self.base = 0
+#         self.height = 0
+#
+#     def set_base(self, user_base):
+#         self.base = user_base
+#
+#     def set_height(self, user_height):
+#         self.height = user_height
+#
+#     def get_area(self):
+#         area = 0.5 * self.base * self.height
+#         return area
+#
+#     def print_info(self):
+#         print(f'Base: {self.base:.2f}')
+#         print(f'Height: {self.height:.2f}')
+#         print(f'Area: {self.get_area():.2f}')
+#
+#
+# if __name__ == "__main__":
+#     triangle1 = Triangle()
+#     triangle2 = Triangle()
+#
+#     larger_triangle = Triangle()
+#
+#     # TODO: Read and set base and height for triangle1 (use set_base() and set_height())
+#     triangle1.set_base(float(input()))
+#     triangle1.set_height(float(input()))
+#
+#     # TODO: Read and set base and height for triangle2 (use set_base() and set_height())
+#     triangle2.set_base(float(input()))
+#     triangle2.set_height(float(input()))
+#
+#     # TODO: Determine larger triangle (use get_area())
+#     if triangle1.get_area() < triangle2.get_area():
+#         larger_triangle = triangle2
+#     else:
+#         larger_triangle = triangle1
+#
+#     print('Triangle with larger area:')
+#     # TODO: Output larger triangle's info (use print_info())
+#     larger_triangle.print_info()
+
+
+# 9.15 LAB: Winning team (classes) (Completed)
+"""
+Complete the Team class implementation. For the instance method get_win_percentage(), 
+the formula is:
+
+    team_wins / (team_wins + team_losses)
+
+    Input :
+
+        Ravens
+        13
+        3 
+
+    Output :
+    
+        Congratulations, Team Ravens has a winning average!
+        
+        
+    Input :
+
+        Angels
+        80
+        82 
+
+    Output :
+    
+        Team Angels has a losing average.
+"""
+# class Team:
+#     def __init__(self):
+#         self.team_name = 'none'
+#         self.team_wins = 0
+#         self.team_losses = 0
+#
+#     # TODO: Define get_win_percentage()
+#     def get_win_percentage(self):
+#         percent = self.team_wins / (self.team_wins + self.team_losses)
+#         return percent
+#
+#
+# if __name__ == "__main__":
+#
+#     team = Team()
+#
+#     team_name = input()
+#     team_wins = float(input())
+#     team_losses = float(input())
+#
+#     team.team_name = team_name
+#     team.team_wins = team_wins
+#     team.team_losses = team_losses
+#
+#     if team.get_win_percentage() >= 0.5:
+#         print('Congratulations, Team', team.team_name, 'has a winning average!')
+#     else:
+#         print('Team', team.team_name, 'has a losing average.')
+
+
+# 9.16 LAB: Vending machine (Completed)
+"""
+Given two integers as user inputs that represent the number of drinks to buy and the number of bottles to restock, create a VendingMachine object that performs the following operations:
+
+    Purchases input number of drinks
+    Restocks input number of bottles
+    Reports inventory
+
+A VendingMachine's initial inventory is 20 drinks.
+
+    Input :
+
+        5
+        2
+
+    Output :
+    
+        Inventory: 17 bottles
+"""
+# class VendingMachine:
+#     def __init__(self):
+#         self.bottles = 20
+#
+#     def purchase(self, amount):
+#         self.bottles = self.bottles - amount
+#
+#     def restock(self, amount):
+#         self.bottles = self.bottles + amount
+#
+#     def get_inventory(self):
+#         return self.bottles
+#
+#     def report(self):
+#         print(f'Inventory: {self.bottles} bottles')
+#
+#
+# if __name__ == "__main__":
+#     # TODO: Create VendingMachine object
+#     vm = VendingMachine()
+#     # TODO: Purchase input number of drinks
+#     vm.purchase(int(input()))
+#     # TODO: Restock input number of bottles
+#     vm.restock(int(input()))
+#     # TODO: Report inventory
+#     vm.report()
+
+
+# 24.1 LAB: Simple car (Completed)
+"""
+Given two integers that represent the miles to drive forward and the miles to drive
+in reverse as user inputs, create a SimpleCar object that performs the following operations:
+
+    Drives input number of miles forward
+    Drives input number of miles in reverse
+    Honks the horn
+    Reports car status
+
+
+    Input :
+
+        100
+        4
+
+    Output :
+    
+        beep beep
+        Car has driven: 96 miles
+"""
+# class SimpleCar:
+#     def __init__(self):
+#         self.miles = 0
+#
+#     def drive(self, dist):
+#         self.miles = self.miles + dist
+#
+#     def reverse(self, dist):
+#         self.miles = self.miles - dist
+#
+#     def get_odometer(self):
+#         return self.miles
+#
+#     def honk_horn(self):
+#         print('beep beep')
+#
+#     def report(self):
+#         print(f'Car has driven: {self.miles} miles')
+#
+#
+# if __name__ == "__main__":
+# # TODO: Create SimpleCar object
+# car = SimpleCar()
+# # TODO: Drive input number of miles forward
+# car.drive(int(input()))
+# # TODO: Drive input number of miles in reverse
+# car.reverse(int(input()))
+# # TODO: Honk the horn
+# car.honk_horn()
+# # TODO: Report car status
+# car.report()
+
+
+# 24.2 LAB: Calculator class (Completed
+"""
+In the file main.py write a class called Calculator that emulates basic functions of a calculator:
+
+        add, subtract, multiply, divide, and clear.
+        
+The class has one attribute called value for the calculator's current value.
+
+Implement the following methods as listed below:
+
+    Default constructor method to set the attribute to 0.0
+    add(self, val) - add the parameter to the attribute
+    subtract(self, val)- subtract the parameter from the attribute
+    multiply(self, val) - multiply the attribute by the parameter
+    divide(self, val)- divide the attribute by the parameter
+    clear(self) - set the attribute to 0.0
+    get_value(self) - return the attribute
+
+Given two float input values num1 and num2, the program outputs the following values:
+
+    The initial value of the instance attribute, value
+    The value after adding num1
+    The value after multiplying by 3
+    The value after subtracting num2
+    The value after dividing by 2
+    The value after calling the clear() method
+
+
+    Input :
+
+        10.0 
+        5.0
+
+    Output :
+    
+        0.0
+        10.0
+        30.0
+        25.0
+        12.5
+        0.0
+"""
+# class Calculator:
+#
+#     # Type your code here.
+#     def __init__(self):
+#         self.num_1 = 0.0
+#         self.num_2 = 0.0
+#         self.val = 0.0
+#
+#     def add(self, value):
+#         self.val += value
+#         return self.val
+#
+#     def multiply(self, value):
+#         self.val *= value
+#         return self.val
+#
+#     def subtract(self, value):
+#         self.val -= value
+#         return self.val
+#
+#     def divide(self, value):
+#         self.val /= value
+#         return self.val
+#
+#     def clear(self):
+#         self.val = 0.0
+#
+#     def get_value(self):
+#         return self.val
+#
+# if __name__ == "__main__":
+#
+#     calc = Calculator()
+#     num1 = float(input())
+#     num2 = float(input())
+#
+#     # 1. The initial value
+#     print(f'{calc.get_value():.1f}')
+#
+#     # 2. The The value after adding num1
+#     calc.add(num1)
+#     print(f'{calc.get_value():.1f}')
+#
+#     # 3. The value after multiplying by 3
+#     calc.multiply(3)
+#     print(f'{calc.get_value():.1f}')
+#
+#     # 4. The value after subtracting num2
+#     calc.subtract(num2)
+#     print(f'{calc.get_value():.1f}')
+#
+#     # 5. The value after dividing by 2
+#     calc.divide(2)
+#     print(f'{calc.get_value():.1f}')
+#
+#     # 6. The value after calling the clear() method
+#     calc.clear()
+#     print(f'{calc.get_value():.1f}')
+
+
+# 24.3 LAB: Product class (Bonus Completed)
+"""
+In main.py define the Product class that will manage product inventory.
+Product class has three attributes: a product code, the product's price, and the number count of product in inventory.
+
+Implement the following methods:
+
+    A constructor with 3 parameters that sets all 3 attributes to the value in the 3 parameters
+    set_code(self, code) - set the product code (i.e. SKU234) to parameter code
+    get_code(self) - return the product code
+    set_price(self, price) - set the price to parameter price
+    get_price(self) - return the price
+    set_count(self, count) - set the number of items in inventory to parameter count
+    get_count(self) - return the count
+    add_inventory(self, amt) - increase inventory by parameter amt
+    sell_inventory(self, amt) - decrease inventory by parameter amt
+
+    Ex. If a new Product object is created with code set to "Apple",
+    price set to 0.40, and the count set to 3, 
+    the output is:
+
+    Input :
+
+        Name: Apple
+        Price: 0.40
+        Count: 3
+
+    Output :
+    
+        0.0
+"""
+# class Product:
+#     # Type your code here
+#     def __init__(self, name_='', price_=0, num_=0):
+#         self.name = name_
+#         self.price = price_
+#         self.num = num_
+#         self.product_amt = 3
+#
+#     def set_code(self, code):
+#         # set the product code (i.e. SKU234) to parameter code
+#         self.name = code
+#
+#     def get_code(self):
+#         return self.name
+#
+#     def set_price(self, price_amt):
+#         # set the price to parameter price
+#         self.price = price_amt
+#
+#     def get_price(self):
+#         return self.price
+#
+#     def set_count(self, count):
+#         # set the number of items in inventory to parameter count
+#         self.num = count
+#
+#     def get_count(self):
+#         return self.num
+#
+#     def add_inventory(self, amt):
+#         self.num += amt
+#
+#     def sell_inventory(self, amt):
+#         self.num -= amt
+#
+
+# if __name__ == "__main__":
+#     name = 'Apple'
+#     price = 0.40
+#     num = 3
+#     p = Product(name, price, num)
+#
+#     # Test 1 - Are instance attributes set/returned properly?
+#     print('Name:', p.get_code())
+#     print(f'Price: {p.get_price():.2f}')
+#     print('Count:', p.get_count())
+#
+#     # Test 2 - Are attributes set/returned properly after adding and selling?
+#     num = 10
+#     p.add_inventory(num)
+#     num = 5
+#     p.sell_inventory(num)
+#     print('Name:', p.get_code())
+#     print(f'Price: {p.get_price():.2f}')
+#     print('Count:', p.get_count())
+#
+#     # Test 3 - Do setters work properly?
+#     name = 'Golden Delicious'
+#     p.set_code(name)
+#     price = 0.55
+#     p.set_price(price)
+#     num = 4
+#     p.set_count(num)
+#     print('Name:', p.get_code())
+#     print(f'Price: {p.get_price():.2f}')
+#     print('Count:', p.get_count())
+
+
+# 24.4 LAB: Student class (Bonus Completed)
+"""
+In main.py define the Student class that has two attributes: name and gpa
+
+Implement the following instance methods:
+
+    A constructor that sets name to "Louie" and gpa to 1.0
+    set_name(self, name) - set student's name to parameter name
+    get_name(self) - return student's name
+    set_gpa(self, gpa) - set student's gpa to parameter gpa
+    get_gpa(self) - return student's gpa
+
+
+    Ex. If a new Student object is created, the default output is:
+    
+        Louie/1.0
+    
+    Ex. If the student's name is set to "Felix" and the gpa is set to 3.7, the output becomes:
+    
+        Felix/3.7
+"""
+# class Student:
+#     # Type your code here
+#     def __init__(self):
+#         self.name = 'Louie'
+#         self.gpa = 1.0
+#
+#     def set_name(self, name):
+#         # set student's name to parameter name
+#         self.name = name
+#
+#     def get_name(self):
+#         return self.name
+#
+#     def set_gpa(self, gpa):
+#         # set student's gpa to parameter gpa
+#         self.gpa = gpa
+#
+#     def get_gpa(self):
+#         return self.gpa
+#
+# if __name__ == "__main__":
+#     initial_student = Student()
+#     print(initial_student.get_name(),'/', initial_student.get_gpa())
+#
+#     initial_student.set_name('Felix')
+#     initial_student.set_gpa(3.7)
+#     print(initial_student.get_name(), '/', initial_student.get_gpa())
+
+
+# 24.5 LAB: Random values (Bonus Completed)
+"""
+In main.py define the RandomNumbers class, which has three integer attributes: var1, var2, and var3.
+Write getter method for each attribute: get_var1(), get_var2() and get_var3().
+Then write the following 2 instance methods:
+
+    - set_random_values( ) - accepts a low and high integer values as parameters, and sets var1, var2, and var3 to
+    random numbers within the range of the low and high input values (inclusive).
+        
+    - get_random_values( ) - prints out the 3 random numbers in the format: "Random values: var1 var2 var3"
+
+
+
+    Input :
+        
+        15
+        20
+
+    Possible Output :
+    
+        Random values: 17 15 19
+        
+        
+    where 17, 15, 19 can be any random numbers within 15 and 20 (inclusive).
+
+Note: When submitted, your program will be tested against different input range to verify
+if the three randomly generated values are within range.
+"""
+# from random import randint
+#
+# class RandomNumbers:
+#     # Type your code here.
+#     def __init__(self):
+#         self.n1 = 0
+#         self.n2 = 0
+#         self.n3 = 0
+#
+#     def set_random_values(self, lw, hi):
+#         self.n1 = randint(lw, hi)
+#         self.n2 = randint(lw, hi)
+#         self.n3 = randint(lw, hi)
+#
+#     def get_var1(self):
+#         return self.n1
+#
+#     def get_var2(self):
+#         return self.n2
+#
+#     def get_var3(self):
+#         return self.n3
+#
+#     def get_random_values(self):
+#         print(f'Random values: {self.n1} {self.n2} {self.n3}')
+#
+# if __name__ == "__main__":
+#
+#     low = int(input())
+#     high = int(input())
+#
+#     numbers = RandomNumbers()
+#     numbers.set_random_values(low, high)
+#     numbers.get_random_values()
